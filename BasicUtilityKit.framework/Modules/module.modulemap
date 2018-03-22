@@ -1,0 +1,6 @@
+framework module BasicUtilityKit {
+  umbrella header "BasicUtilityKit.h"
+
+  export *
+  module * { export * }
+}
