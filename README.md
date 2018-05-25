@@ -12,9 +12,9 @@
       #import <BasicUtility/BasicUtility.h>
   3) Handle Notification Request
   
-         - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler {
-    [[BasicUtility sharedInstance] didReceiveNotificationRequest:request withAttachmentURL:"https://wallpapercave.com/wp/X0hSfWT.jpg" withContentHandler:^(UNNotificationContent *contentToDeliver) {
-     contentHandler(contentToDeliver); }];
+         - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler { 
+         [[BasicUtility sharedInstance] didReceiveNotificationRequest:request withAttachmentURL:"https://wallpapercave.com/wp/X0hSfWT.jpg" withContentHandler:^(UNNotificationContent *contentToDeliver) {
+         contentHandler(contentToDeliver); }];
     }
   
   4) Handle Notification Service Time Expire
