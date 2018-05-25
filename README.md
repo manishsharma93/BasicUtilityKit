@@ -11,37 +11,36 @@
   2) Import BasicUtilityKit Framework into Extension
       #import <BasicUtility/BasicUtility.h>
   3) Handle Notification Request
-  ```swift
-         - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler { 
-         
-         [[BasicUtility sharedInstance] didReceiveNotificationRequest:request withAttachmentURL:"https://wallpapercave.com/wp/X0hSfWT.jpg" withContentHandler:^(UNNotificationContent *contentToDeliver) {
-         contentHandler(contentToDeliver); }];
-         }
-  ```
-  4) Handle Notification Service Time Expire
-  ```swift
-    - (void)serviceExtensionTimeWillExpire {
+```swift
+  - (void)didReceiveNotificationRequest:(UNNotificationRequest *)request withContentHandler:(void (^)(UNNotificationContent * _Nonnull))contentHandler { 
+[[BasicUtility sharedInstance] didReceiveNotificationRequest:request withAttachmentURL:"https://wallpapercave.com/wp/X0hSfWT.jpg" withContentHandler:^(UNNotificationContent *contentToDeliver) {
+contentHandler(contentToDeliver); }];
+}
+```
+4) Handle Notification Service Time Expire
+```swift
+- (void)serviceExtensionTimeWillExpire {
     [[BasicUtility sharedInstance] serviceExtensionTimeWillExpire]; 
-    }
-    ```
+}
+```
     
 3. Implementing Rich Push Notifications into App(Swift)
   1) Remove all the code written in “didReceiveNotificationRequest” and “serviceExtensionTimeWillExpire” .
   2) Import BasicUtilityKit Framework into Extension
       import BasicUtility
   3) Handle Notification Request
-  ```swift
-         override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
-    BasicUtility.sharedInstance().didReceive(request,"https://wallpapercave.com/wp/X0hSfWT.jpg") { (contentToDeliver:UNNotificationContent) in
-    contentHandler(contentToDeliver) }
-    }
-  ```
+```swift
+override func didReceive(_ request: UNNotificationRequest, withContentHandler contentHandler: @escaping (UNNotificationContent) -> Void) {
+BasicUtility.sharedInstance().didReceive(request,"https://wallpapercave.com/wp/X0hSfWT.jpg") { (contentToDeliver:UNNotificationContent) in
+contentHandler(contentToDeliver) }
+}
+```
   4) Handle Notification Service Time Expire
-  ```swift
-    override func serviceExtensionTimeWillExpire() {
+```swift
+override func serviceExtensionTimeWillExpire() {
     BasicUtility.sharedInstance().serviceExtensionTimeWillExpire() 
-    }
-    ```
+}
+```
     
       
 
