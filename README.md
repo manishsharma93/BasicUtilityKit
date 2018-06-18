@@ -6,7 +6,7 @@
   2) Click Next and when asked to “Activate”, Click yes.
   3) Make Sure you have enabled “Background Mode -> Background fetch” in your apps Capabilities too.
   
-2. Implementing Rich Push Notifications into App(Objective C)
+***2. Implementing Rich Push Notifications into App(Objective C)***
   1) Remove all the code written in “didReceiveNotificationRequest” and “serviceExtensionTimeWillExpire” .
   2) Import BasicUtilityKit Framework into Extension
       #import <BasicUtility/BasicUtility.h>
@@ -24,7 +24,7 @@ contentHandler(contentToDeliver); }];
 }
 ```
     
-3. Implementing Rich Push Notifications into App(Swift)
+***3. Implementing Rich Push Notifications into App(Swift)***
   1) Remove all the code written in “didReceiveNotificationRequest” and “serviceExtensionTimeWillExpire” .
   2) Import BasicUtilityKit Framework into Extension
       import BasicUtility
